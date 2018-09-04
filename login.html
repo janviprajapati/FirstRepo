@@ -1,0 +1,57 @@
+<html>
+    <head>
+    <title>Film info</title>
+
+    <script src="jQuery.js" type="text/javascript"></script>
+    <script src="functions.js" type="text/javascript"></script>
+
+    </head>
+        <body>
+
+        <div id="form">
+
+            <h1><b>Please enter data</b></h1>
+        <hr size="3"/>
+        <br>
+
+            <label for="title">Title</label> <input id="title" type="text" > 
+        <br>
+
+            <label for="name">Actor</label><input id="name" type="text">
+        <br>
+
+            <label for="tickets">tickets</label><input id="tickets" type="text">
+        <br>
+        <br>
+
+            <input type="button" value="Save" onclick="insert(this.form.title.value)">
+            <input type="button" value="Show data" onclick="show()"> <br>
+
+            <h2><b>Data:</b></h2>
+        <hr>
+        </div>
+
+        <div id= "display">
+
+        </div>
+        </body>
+
+<script>
+var title=new Array();
+var name=new Array();
+var tickets=new Array();
+
+function insert(val){
+  title[title.length]=val;
+  }
+
+function show() {
+  var string="<b>All Elements of the Array :</b><br>";
+  for(i = 0; i < title.length; i++) {
+  string =string+title[i]+"<br>";
+  }
+  if(title.length > 0)
+ document.getElementById('myDiv').innerHTML = string;
+  }
+</script>
+  </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>registration Form</title>
+  <meta charset="UTF-8" />
+  <title>X - company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="blossk" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body{
+
+    background-color: pink;
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        background-color: whitesmoke;
+    }
+}
+.centered-form{
+	margin-top: 60px;
+}
+
+
+</style>
+  
+</head>
+<body >
+    <div class="container">
+            <div class="row centered-form">
+                    
+                            <div class="panel-heading">
+                                    <nav class="navbar navbar-inverse">
+                                           
+                                              <div class="navbar-header">
+                                                <a class="navbar-brand" href="#">Registration </a>
+                                              </div>
+                                              
+                                            </nav>
+                                                </div>
+
+
+                                     <div class="panel-body">
+                                    <form role="form">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                   <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name" required> 
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password" >
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" rows="4" id="address" class="form-control input-sm" placeholder="Address"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">  
+                                        <a href="#" onclick="Validate(event)" >Submit</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                       
+    </div>
+   <script type="text/javascript">
+        function Validate(event) {
+            event.preventDefault();
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("password_confirmation").value;
+            var first_name= document.getElementById("first_name").value;
+            var last_name = document.getElementById("last_name").value;
+            var array_data = []
+            array_data.push({"password" : password})
+            array_data.push({"first_name" : first_name})
+            array_data.push({"last_name" : last_name})
+            console.log(array_data.length);
+
+            console.log(array_data)
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return false;
+        }
+    </script>*
+</body>
+</html>
